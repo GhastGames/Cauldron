@@ -10,6 +10,7 @@ import java.util.List;
 public class PluginKit {
     private static MinecraftPlugin minecraftPlugin;
     private static List<PlannedMethodExecution> hooks;
+    private static PluginController pluginController = new PluginController();
 
     enum HookEvent {
         ENABLE, DISABLE
@@ -31,5 +32,7 @@ public class PluginKit {
         }
     }
 
-
+    public static PluginController getController() {
+        return pluginController;
+    }
 }
