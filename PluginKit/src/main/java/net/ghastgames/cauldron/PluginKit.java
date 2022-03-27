@@ -1,6 +1,7 @@
 package net.ghastgames.cauldron;
 
 import net.ghastgames.cauldron.annotations.DisableHook;
+import net.ghastgames.cauldron.annotations.EnableHook;
 
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -20,6 +21,9 @@ public class PluginKit {
             for(Method method : plugin.getMethods()) {
                 if(method.isAnnotationPresent(DisableHook.class)) {
                     hooks.add(new PlannedMethodExecution(HookEvent.DISABLE, method));
+                }
+                if(method.isAnnotationPresent(EnableHook.class)) {
+                    hooks.add(new PlannedMethodExecution(HookEvent.ENABLE, method));
                 }
             }
         } catch (InstantiationException | IllegalAccessException e) {
