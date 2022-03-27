@@ -35,11 +35,6 @@ public class PluginKit {
             commandName = "ghastgames-" + new Random().nextInt();
         }
 
-        plugin.getCommand(commandName).setExecutor(new CommandExecutor() {
-            @Override
-            public boolean onCommand(CommandSender commandSender, Command c, String s, String[] strings) {
-                return command.execute(new CommandExecution(commandSender, strings));
-            }
-        });
+        plugin.getCommand(commandName).setExecutor((commandSender, c, s, args) -> command.execute(new CommandExecution(commandSender, args)));
     }
 }
