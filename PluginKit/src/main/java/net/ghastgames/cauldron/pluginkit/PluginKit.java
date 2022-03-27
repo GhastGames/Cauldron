@@ -20,21 +20,30 @@ public class PluginKit {
 
     public static void registerCommand(CauldronCommand command) {
         String commandName = "";
-        String[] permissions = {};
+        String permission = "";
 
         if(command.getClass().isAnnotationPresent(CommandDetails.class)) {
             CommandDetails details = command.getClass().getAnnotation(CommandDetails.class);
             commandName = Objects.requireNonNullElse(details.name(), "");
-            permissions = Objects.requireNonNullElse(details.permissions(), new String[]{""});
+            permission = Objects.requireNonNullElse(details.permission(), "");
         } else {
             commandName = "";
-            permissions = new String[]{""};
+            permission = "";
         }
 
         if(commandName.isBlank()) {
             commandName = "ghastgames-" + new Random().nextInt();
         }
 
-        plugin.getCommand(commandName).setExecutor((commandSender, c, s, args) -> command.execute(new CommandExecution(commandSender, args)));
+        String finalPermission = permission;
+        plugin.getCommand(commandName).setExecutor((commandSender, c, s, args) -> {
+            if(!finalPermission.isEmpty()) {
+                if(!commandSender.hasPermission(finalPermission)) {
+                    commandSender.sendMessage("§cYou don't have permission to do this.");
+                    return false;
+                }
+            }
+            return command.execute(new CommandExecution(commandSender, args));
+        });
     }
 }
