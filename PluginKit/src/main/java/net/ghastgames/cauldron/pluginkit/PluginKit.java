@@ -3,9 +3,6 @@ package net.ghastgames.cauldron.pluginkit;
 import net.ghastgames.cauldron.pluginkit.annotations.CommandDetails;
 import net.ghastgames.cauldron.pluginkit.commands.CauldronCommand;
 import net.ghastgames.cauldron.pluginkit.commands.CommandExecution;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
-import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -45,5 +42,13 @@ public class PluginKit {
             }
             return command.execute(new CommandExecution(commandSender, args));
         });
+    }
+
+    enum Restriction {
+        BUILDING
+    }
+
+    public static void restrict(Restriction restriction, String bypassPermission) {
+        // disable building
     }
 }
