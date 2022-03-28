@@ -4,6 +4,7 @@ import net.ghastgames.cauldron.pluginkit.annotations.CommandDetails;
 import net.ghastgames.cauldron.pluginkit.commands.CauldronCommand;
 import net.ghastgames.cauldron.pluginkit.commands.CommandExecution;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -61,6 +62,10 @@ public class PluginKit {
             }
             return command.execute(new CommandExecution(commandSender, args));
         });
+    }
+
+    public static void registerBukkitCommand(String cmd, CommandExecutor executor) {
+        plugin.getCommand(cmd).setExecutor(executor);
     }
 
     enum Restriction {
