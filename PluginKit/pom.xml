@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.ghastgames.cauldron</groupId>
-    <artifactId>plugins</artifactId>
+    <artifactId>PluginKit</artifactId>
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
