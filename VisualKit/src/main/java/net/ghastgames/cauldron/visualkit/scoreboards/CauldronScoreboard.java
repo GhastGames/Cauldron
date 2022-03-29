@@ -5,6 +5,6 @@ import net.ghastgames.cauldron.visualkit.scoreboards.value.ScoreboardValue;
 
 @Data
 public class CauldronScoreboard {
-    private String title;
+    private ScoreboardValue title;
     private ScoreboardValue[] content;
 }

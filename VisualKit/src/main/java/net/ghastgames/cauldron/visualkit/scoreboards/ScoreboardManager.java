@@ -40,7 +40,7 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
             }
             count--;
         }
-        objective.setDisplayName(scoreboardToShow.getTitle());
+        objective.setDisplayName(scoreboardToShow.getTitle().get());
         player.setScoreboard(scoreboard);
     }
 
