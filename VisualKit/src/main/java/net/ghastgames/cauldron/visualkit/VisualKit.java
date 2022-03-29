@@ -5,7 +5,7 @@ import net.ghastgames.cauldron.visualkit.scoreboards.ScoreboardManager;
 
 public class VisualKit {
     private static VisualKit instance;
-    private ScoreboardManager scoreboardManager;
+    private final ScoreboardManager scoreboardManager = ScoreboardManager.getInstance();
 
     private VisualKit() {}
 
