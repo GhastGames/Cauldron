@@ -34,7 +34,7 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
                 Score score = objective.getScore(value.get());
                 score.setScore(count);
             } else {
-                Team dynamicValue = scoreboard.registerNewTeam(value.id.toString());
+                Team dynamicValue = scoreboard.registerNewTeam(value.id);
                 dynamicValue.addEntry(placeholders[count]);
                 dynamicValue.setPrefix(value.get());
             }

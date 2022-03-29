@@ -2,11 +2,10 @@ package net.ghastgames.cauldron.visualkit.scoreboards.value;
 
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.UUID;
+import org.apache.commons.lang.RandomStringUtils;
 
 public class ScoreboardValue {
-    public UUID id = UUID.randomUUID();
+    public String id = RandomStringUtils.random(8, "0123456789abcdef");
     public String value;
     @Getter
     @Setter
