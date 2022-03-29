@@ -22,7 +22,7 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
 
     public void set(Player player, CauldronScoreboard scoreboardToShow) {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
-        Objective objective = scoreboard.registerNewObjective("ghast", "games");
+        Objective objective = scoreboard.registerNewObjective( "ghast", "games");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
         int count = scoreboardToShow.getContent().length;
         String[] placeholders = new String[]{"§a", "§b", "§c", "§d", "§e", "§f", "§1", "§2", "§3", "§4", "§a§b", "§l", "§u", "§o", "§u§l"};
