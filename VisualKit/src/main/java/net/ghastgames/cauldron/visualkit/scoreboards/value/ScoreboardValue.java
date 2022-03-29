@@ -19,4 +19,11 @@ public class ScoreboardValue {
     public String get() {
         return value;
     }
+
+    public static ScoreboardValue fromString(String value) {
+        ScoreboardValue scoreboardValue = new ScoreboardValue();
+        scoreboardValue.set(value);
+        scoreboardValue.setStaticVariable(false);
+        return scoreboardValue;
+    }
 }
