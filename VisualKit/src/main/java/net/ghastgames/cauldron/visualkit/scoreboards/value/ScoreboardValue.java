@@ -1,9 +1,21 @@
 package net.ghastgames.cauldron.visualkit.scoreboards.value;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 
-public abstract class ScoreboardValue {
+public class ScoreboardValue {
     public UUID id = UUID.randomUUID();
-    public abstract boolean isStatic();
-    public abstract String get();
+    public String value;
+    @Getter
+    private boolean staticVariable;
+
+    public void set(String value) {
+        this.value = value;
+    }
+
+    public String get() {
+        return value;
+    }
 }
