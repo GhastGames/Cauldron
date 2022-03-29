@@ -9,7 +9,8 @@ public class ScoreboardValue {
     public UUID id = UUID.randomUUID();
     public String value;
     @Getter
-    private boolean staticVariable;
+    @Setter
+    private boolean staticVariable = false;
 
     public void set(String value) {
         this.value = value;
