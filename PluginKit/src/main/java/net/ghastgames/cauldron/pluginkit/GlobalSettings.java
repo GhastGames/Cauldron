@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class GlobalSettings {
-    private int maxPlayers;
-    private String serverFullMessage;
-    private String serverFullBypassPermission;
-    private boolean buildRestricted;
-    private String buildPermission;
-    private String buildPermissionDeniedMessage;
+    private int maxPlayers = 0;
+    private String serverFullMessage = "";
+    private String serverFullBypassPermission = "";
+    private boolean buildRestricted = false;
+    private String buildPermission = "";
+    private String buildPermissionDeniedMessage = "";
 }

@@ -28,7 +28,13 @@ public class PluginKit {
             @EventHandler
             public void onJoin(PlayerJoinEvent event) {
                 if(settings.getMaxPlayers() == 0) return;
-                if(Bukkit.getOnlinePlayers().size() >= settings.getMaxPlayers() && !event.getPlayer().hasPermission(settings.getServerFullBypassPermission())) {
+                if(Bukkit.getOnlinePlayers().size() >= settings.getMaxPlayers()) {
+                    if(settings.getServerFullBypassPermission().isBlank()) {
+                        if(!event.getPlayer().hasPermission(settings.getServerFullBypassPermission())) {
+                            event.getPlayer().kickPlayer(Objects.requireNonNullElse(settings.getServerFullMessage(), "§cThis server is full."));
+                            return;
+                        }
+                    }
                     event.getPlayer().kickPlayer(Objects.requireNonNullElse(settings.getServerFullMessage(), "§cThis server is full."));
                 }
             }
