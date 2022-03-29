@@ -1,5 +1,6 @@
 package net.ghastgames.cauldron.visualkit.scoreboards;
 
+import net.ghastgames.cauldron.visualkit.VisualManager;
 import net.ghastgames.cauldron.visualkit.scoreboards.value.ScoreboardValue;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -8,7 +9,7 @@ import org.bukkit.scoreboard.*;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class ScoreboardManager {
+public class ScoreboardManager implements VisualManager<CauldronScoreboard, ScoreboardValue> {
     private HashMap<Player, CauldronScoreboard> scoreboards;
     private static ScoreboardManager instance;
 
@@ -19,7 +20,7 @@ public class ScoreboardManager {
         return instance;
     }
 
-    public void setScoreboard(Player player, CauldronScoreboard scoreboardToShow) {
+    public void set(Player player, CauldronScoreboard scoreboardToShow) {
         Scoreboard scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective objective = scoreboard.registerNewObjective("ghast", "games");
         objective.setDisplaySlot(DisplaySlot.SIDEBAR);
@@ -42,7 +43,7 @@ public class ScoreboardManager {
         player.setScoreboard(scoreboard);
     }
 
-    public void updateScoreboard(Player player, ScoreboardValue update) {
+    public void update(Player player, ScoreboardValue update) {
         player.getScoreboard().getTeam(update.id.toString()).setPrefix(update.get());
     }
 }
