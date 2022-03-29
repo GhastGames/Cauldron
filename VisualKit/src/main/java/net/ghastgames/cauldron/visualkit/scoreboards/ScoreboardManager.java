@@ -30,7 +30,7 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
             throw new IllegalArgumentException("Scoreboard too long");
         }
         for(ScoreboardValue value : scoreboardToShow.getContent()) {
-            if(value.isStatic()) {
+            if(value.isStaticVariable()) {
                 Score score = objective.getScore(value.get());
                 score.setScore(count);
             } else {
