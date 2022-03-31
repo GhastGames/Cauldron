@@ -6,11 +6,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.UUID;
 
 public class ScoreboardManager implements VisualManager<CauldronScoreboard, ScoreboardValue> {
-    private HashMap<Player, CauldronScoreboard> scoreboards;
+    private HashMap<Player, CauldronScoreboard> scoreboards = new HashMap<>();
     private static ScoreboardManager instance;
 
     private ScoreboardManager() {}
@@ -43,9 +45,31 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
         }
         objective.setDisplayName(scoreboardToShow.getTitle().get());
         player.setScoreboard(scoreboard);
+        scoreboards.put(player, scoreboardToShow);
     }
 
     public void update(Player player, ScoreboardValue update) {
         player.getScoreboard().getTeam(update.id.toString()).setPrefix(update.get());
+    }
+
+    public void update(Player player, ScoreboardValue[] update) {
+        CauldronScoreboard scoreboard = scoreboards.get(player);
+        for (ScoreboardValue scoreboardValue : scoreboard.getContent()) {
+            ScoreboardValue newValue = getById(scoreboardValue.id, update);
+            if(!newValue.get().equalsIgnoreCase(scoreboardValue.get())) {
+                player.getScoreboard().getTeam(newValue.id).setPrefix(newValue.get());
+            }
+        }
+    }
+
+    private ScoreboardValue getById(String id, ScoreboardValue[] values) {
+        for (ScoreboardValue value : values) {
+            if(Objects.equals(value.id, id)) return value;
+        }
+        return null;
+    }
+
+    public CauldronScoreboard get(Player player) {
+        return scoreboards.get(player);
     }
 }

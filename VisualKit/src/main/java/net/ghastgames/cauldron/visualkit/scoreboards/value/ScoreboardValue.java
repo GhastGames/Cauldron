@@ -10,6 +10,9 @@ public class ScoreboardValue {
     @Getter
     @Setter
     private boolean staticVariable = false;
+    @Getter
+    @Setter
+    private String reference;
 
     public void set(String value) {
         this.value = value;
