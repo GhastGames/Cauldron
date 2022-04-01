@@ -12,6 +12,7 @@ public class CauldronScoreboard {
         for (int i = 0; i < content.length; i++) {
             if(content[i].getReference() != null) {
                 if (content[i].getReference().equals(reference)) {
+                    newValue.setReference(content[i].getReference());
                     content[i] = newValue;
                 }
             }
