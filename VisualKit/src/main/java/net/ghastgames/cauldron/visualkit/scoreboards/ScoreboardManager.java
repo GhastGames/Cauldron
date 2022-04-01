@@ -56,9 +56,16 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
         CauldronScoreboard scoreboard = scoreboards.get(player);
         for (ScoreboardValue scoreboardValue : scoreboard.getContent()) {
             ScoreboardValue newValue = getById(scoreboardValue.id, update);
+            Bukkit.getLogger().info("1");
             if(!newValue.get().equalsIgnoreCase(scoreboardValue.get())) {
+                Bukkit.getLogger().info("---- CHANGE");
+                Bukkit.getLogger().info("new: " + newValue.get());
+                Bukkit.getLogger().info("new id: " + newValue.id);
+                Bukkit.getLogger().info("old: " + scoreboardValue.get());
                 player.getScoreboard().getTeam(newValue.id).setPrefix(newValue.get());
+                Bukkit.getLogger().info("---- END CHANGE");
             }
+            Bukkit.getLogger().info("2");
         }
     }
 
