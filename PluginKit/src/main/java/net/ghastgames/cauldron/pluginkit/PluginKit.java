@@ -1,5 +1,6 @@
 package net.ghastgames.cauldron.pluginkit;
 
+import lombok.Getter;
 import net.ghastgames.cauldron.pluginkit.annotations.CommandDetails;
 import net.ghastgames.cauldron.pluginkit.commands.CauldronCommand;
 import net.ghastgames.cauldron.pluginkit.commands.CommandExecution;
@@ -14,6 +15,7 @@ import java.util.Objects;
 import java.util.Random;
 
 public class PluginKit {
+    @Getter
     private static JavaPlugin plugin;
     private static GlobalSettings settings;
 
