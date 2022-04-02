@@ -37,18 +37,37 @@ public class CauldronAnimation<T> {
         }
     }
 
+    public void addKeyframeForEveryone(T change) {
+        try {
+            keyframes.add(new BukkitRunnable() {
+                @Override
+                public void run() {
+                    for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                        ((VisualManager<?, T>) manager).update(onlinePlayer, change);
+                    }
+                }
+            });
+        } catch(ClassCastException exception) {
+            throw new IllegalArgumentException("The VisualManager used is incompatible with this CauldronAnimation instance, since it has a different visual type.");
+        }
+    }
+
     public void play(JavaPlugin plugin) {
         Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin, new BukkitRunnable() {
-            int i = keyframes.size();
+            int i = 0;
 
             @Override
             public void run() {
-                if(i == 0) {
-                    cancel();
-                    return;
+                if(i == keyframes.size()) {
+                    if(!infinite) {
+                        i = 0;
+                    } else {
+                        cancel();
+                        return;
+                    }
                 }
                 keyframes.get(i).run();
-                i--;
+                i++;
             }
         }, 20 * speed, 0);
     }
