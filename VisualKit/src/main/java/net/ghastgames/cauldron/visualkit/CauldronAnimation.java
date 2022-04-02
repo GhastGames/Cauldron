@@ -9,6 +9,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class CauldronAnimation<T> {
     @Getter
@@ -16,7 +17,7 @@ public class CauldronAnimation<T> {
     @Getter
     private final int speed = 1;
     @Getter
-    private final LinkedList<Runnable> keyframes = new LinkedList<>();
+    private final List<T> keyframes = new ArrayList<>();
     private final VisualManager<?, ?> manager;
 
     public CauldronAnimation(VisualManager<?, ?> manager, boolean infinite) {
@@ -24,32 +25,8 @@ public class CauldronAnimation<T> {
         this.infinite = infinite;
     }
 
-    public void addKeyframe(Player player, T change) {
-        try {
-            keyframes.add(new BukkitRunnable() {
-                @Override
-                public void run() {
-                    ((VisualManager<?, T>) manager).update(player, change);
-                }
-            });
-        } catch(ClassCastException exception) {
-            throw new IllegalArgumentException("The VisualManager used is incompatible with this CauldronAnimation instance, since it has a different visual type.");
-        }
-    }
-
     public void addKeyframeForEveryone(T change) {
-        try {
-            keyframes.add(new BukkitRunnable() {
-                @Override
-                public void run() {
-                    for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
-                        ((VisualManager<?, T>) manager).update(onlinePlayer, change);
-                    }
-                }
-            });
-        } catch(ClassCastException exception) {
-            throw new IllegalArgumentException("The VisualManager used is incompatible with this CauldronAnimation instance, since it has a different visual type.");
-        }
+        keyframes.add(change);
     }
 
     public void play(JavaPlugin plugin) {
@@ -66,7 +43,10 @@ public class CauldronAnimation<T> {
                         return;
                     }
                 }
-                keyframes.get(i).run();
+                Bukkit.getLogger().info(String.valueOf(i));
+                for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
+                    ((VisualManager<?, T>) manager).update(onlinePlayer, keyframes.get(i));
+                }
                 i++;
             }
         }, 20 * speed, 0);
