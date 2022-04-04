@@ -66,9 +66,16 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
         }
     }
 
-    private ScoreboardValue getById(String id, ScoreboardValue[] values) {
+    public ScoreboardValue getById(String id, ScoreboardValue[] values) {
         for (ScoreboardValue value : values) {
             if(Objects.equals(value.id, id)) return value;
+        }
+        return null;
+    }
+
+    public ScoreboardValue getByReference(String reference, ScoreboardValue[] values) {
+        for (ScoreboardValue value : values) {
+            if(Objects.equals(value.getReference(), reference)) return value;
         }
         return null;
     }
