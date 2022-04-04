@@ -30,7 +30,12 @@
            <artifactId>commons-lang3</artifactId>
            <version>3.12.0</version>
        </dependency>
-    </dependencies>
+       <dependency>
+           <groupId>net.ghastgames</groupId>
+           <artifactId>craftbukkit</artifactId>
+           <version>1.0</version>
+       </dependency>
+   </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -41,6 +46,11 @@
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>project.local</id>
+            <name>project</name>
+            <url>file:${project.basedir}/repo</url>
         </repository>
     </repositories>
 </project>

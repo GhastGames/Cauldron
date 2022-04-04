@@ -7,13 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="plugins" />
         <module name="PluginKit" />
         <module name="VisualKit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PluginKit" target="11" />
+      <module name="plugins" target="11" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="PluginKit" options="" />
+      <module name="VisualKit" options="" />
+      <module name="cauldron" options="-cp" />
+    </option>
   </component>
 </project>
