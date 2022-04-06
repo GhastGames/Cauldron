@@ -11,6 +11,7 @@
     <modules>
         <module>PluginKit</module>
         <module>VisualKit</module>
+        <module>StorageKit</module>
     </modules>
 
     <properties>
