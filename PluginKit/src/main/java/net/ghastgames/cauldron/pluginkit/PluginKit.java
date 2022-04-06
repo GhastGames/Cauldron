@@ -17,7 +17,7 @@ import java.util.Random;
 public class PluginKit {
     @Getter
     private static JavaPlugin plugin;
-    private static GlobalSettings settings;
+    private static final GlobalSettings settings = new GlobalSettings();
 
     public static void init(JavaPlugin javaPlugin) {
         plugin = javaPlugin;
