@@ -14,5 +14,11 @@ public class StorageKit {
         return instance;
     }
 
-    public void
+    public void saveLocal(String path, Object object) {
+        PluginKit.getPlugin().getConfig().set(path, object);
+    }
+
+    public Object getLocal(String path) {
+        return PluginKit.getPlugin().getConfig().get(path);
+    }
 }
