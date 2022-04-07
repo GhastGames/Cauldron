@@ -41,7 +41,11 @@ public class ScoreboardManager implements VisualManager<CauldronScoreboard, Scor
                 dynamicValue.setPrefix(value.get());
                 if(value.get().length() >= 14) {
                     dynamicValue.setPrefix(value.get().substring(0, 16));
-                    dynamicValue.setSuffix(value.get().substring(16).isEmpty() ? "" : value.get().substring(16));
+                    try {
+                        dynamicValue.setSuffix(value.get().substring(16).isEmpty() ? "" : value.get().substring(16));
+                    } catch(Exception e) {
+                        dynamicValue.setSuffix("");
+                    }
                 } else {
                     dynamicValue.setPrefix(value.get());
                 }
