@@ -1,6 +1,6 @@
 package net.ghastgames.cauldron;
 
 public abstract class CauldronInstance {
-    abstract void start(ServerStartup startupDetails);
-    abstract void stop();
+    public abstract void start(ServerStartup startupDetails);
+    public abstract void stop();
 }
