@@ -34,6 +34,11 @@
     <remote-repository>
       <option name="id" value="project.local" />
       <option name="name" value="project" />
+      <option name="url" value="file:$PROJECT_DIR$/VisualKit/.repo" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="project.local" />
+      <option name="name" value="project" />
       <option name="url" value="file:$PROJECT_DIR$/VisualKit/repo" />
     </remote-repository>
   </component>
