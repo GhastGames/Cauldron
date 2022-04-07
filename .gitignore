@@ -3,3 +3,4 @@
 *.class
 /*/target/
 .DS_Store
+target/cauldron-1.0-SNAPSHOT-shaded.pom
