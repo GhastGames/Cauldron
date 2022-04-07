@@ -3,4 +3,4 @@
 </p>
 
 # Cauldron
-Libraries for Minecraft servers and its plugins
+Libraries for Minecraft servers and their plugins. The documentation isn't ready yet, sorry!
