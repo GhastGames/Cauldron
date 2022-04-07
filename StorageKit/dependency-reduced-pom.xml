@@ -7,16 +7,11 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.ghastgames.cauldron</groupId>
-  <artifactId>VisualKit</artifactId>
+  <artifactId>StorageKit</artifactId>
   <repositories>
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-    </repository>
-    <repository>
-      <id>project.local</id>
-      <name>project</name>
-      <url>file:${project.basedir}/repo</url>
     </repository>
   </repositories>
   <dependencies>
