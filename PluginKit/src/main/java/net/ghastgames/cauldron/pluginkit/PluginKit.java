@@ -31,13 +31,13 @@ public class PluginKit {
             public void onJoin(PlayerJoinEvent event) {
                 if(settings.getMaxPlayers() == 0) return;
                 if(Bukkit.getOnlinePlayers().size() >= settings.getMaxPlayers()) {
-                    if(settings.getServerFullBypassPermission().isBlank()) {
+                    if(settings.getServerFullBypassPermission().isEmpty()) {
                         if(!event.getPlayer().hasPermission(settings.getServerFullBypassPermission())) {
-                            event.getPlayer().kickPlayer(Objects.requireNonNullElse(settings.getServerFullMessage(), "§cThis server is full."));
+                            event.getPlayer().kickPlayer(settings.getServerFullMessage() == null ? "§cThis server is full." : settings.getServerFullMessage());
                             return;
                         }
                     }
-                    event.getPlayer().kickPlayer(Objects.requireNonNullElse(settings.getServerFullMessage(), "§cThis server is full."));
+                    event.getPlayer().kickPlayer(settings.getServerFullMessage() == null ? "§cThis server is full." : settings.getServerFullMessage());
                 }
             }
         }, plugin);
@@ -49,14 +49,14 @@ public class PluginKit {
 
         if(command.getClass().isAnnotationPresent(CommandDetails.class)) {
             CommandDetails details = command.getClass().getAnnotation(CommandDetails.class);
-            commandName = Objects.requireNonNullElse(details.name(), "");
-            permission = Objects.requireNonNullElse(details.permission(), "");
+            commandName = (details.name() == null ? "" : details.name());
+            permission = (details.permission() == null ? "" : permission);
         } else {
             commandName = "";
             permission = "";
         }
 
-        if(commandName.isBlank()) {
+        if(commandName.isEmpty()) {
             commandName = "ghastgames-" + new Random().nextInt();
         }
 

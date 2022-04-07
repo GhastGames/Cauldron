@@ -75,7 +75,7 @@ public class DynamicCommandBuilder {
             if(condition != null) {
                 ConditionResponse response = condition.execute(commandSender, args);
                 if(!response.isOk()) {
-                    commandSender.sendMessage(Objects.requireNonNullElse(response.getMessage(), "§cThis command can't be executed right now."));
+                    commandSender.sendMessage(response.getMessage() == null ? "§cThis command can't be executed right now." : response.getMessage());
                     return false;
                 }
             }
