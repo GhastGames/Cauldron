@@ -9,10 +9,10 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>PluginKit</module>
-        <module>VisualKit</module>
-        <module>StorageKit</module>
-        <module>CloudKit</module>
+        <module>pluginkit</module>
+        <module>visualkit</module>
+        <module>storagekit</module>
+        <module>cloudkit</module>
     </modules>
 
     <properties>
