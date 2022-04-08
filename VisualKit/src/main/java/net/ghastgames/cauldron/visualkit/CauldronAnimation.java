@@ -1,14 +1,12 @@
 package net.ghastgames.cauldron.visualkit;
 
 import lombok.Getter;
-import net.ghastgames.cauldron.visualkit.scoreboards.value.ScoreboardValue;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class CauldronAnimation<T> {
