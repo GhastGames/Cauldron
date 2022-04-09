@@ -6,7 +6,11 @@ public class StorageKit {
     private static StorageKit instance;
 
     static {
-        PluginKit.getPlugin().saveConfig();
+        try {
+            PluginKit.getPlugin().saveConfig();
+        } catch(NullPointerException exception) {
+            System.out.println("[Cauldron][StorageKit] Can't init config: PluginKit not initialized");
+        }
     }
 
     public static StorageKit getInstance() {
