@@ -14,9 +14,8 @@
 
     <distributionManagement>
         <repository>
-            <id>github</id>
-            <name>GitHub GhastGames Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/ghastgames/cauldron</url>
+            <id>GhastGames Public Repository</id>
+            <url>https://repo.ghastgames.net/snapshots</url>
         </repository>
     </distributionManagement>
 

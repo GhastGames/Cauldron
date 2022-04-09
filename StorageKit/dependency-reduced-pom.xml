@@ -7,7 +7,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.ghastgames.cauldron</groupId>
-  <artifactId>StorageKit</artifactId>
+  <artifactId>storagekit</artifactId>
   <repositories>
     <repository>
       <id>spigot-repo</id>
@@ -22,6 +22,12 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>GhastGames Public Repository</id>
+      <url>https://repo.ghastgames.net/snapshots</url>
+    </repository>
+  </distributionManagement>
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
