@@ -1,14 +1,8 @@
-package net.ghastgames.cauldron.pluginkit.annotations;
+package net.ghastgames.cauldron.pluginkit.commands;
 
 import lombok.Getter;
 import net.ghastgames.cauldron.pluginkit.PluginKit;
-import net.ghastgames.cauldron.pluginkit.commands.CauldronCommandExecutor;
-import net.ghastgames.cauldron.pluginkit.commands.CommandExecution;
-import net.ghastgames.cauldron.pluginkit.commands.Condition;
-import net.ghastgames.cauldron.pluginkit.commands.ConditionResponse;
 import org.bukkit.entity.Player;
-
-import java.util.Objects;
 
 public class DynamicCommandBuilder {
     @Getter
