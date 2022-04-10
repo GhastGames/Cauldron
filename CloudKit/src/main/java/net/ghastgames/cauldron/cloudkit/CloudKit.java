@@ -1,4 +1,4 @@
-package net.ghastgames.cauldron;
+package net.ghastgames.cauldron.cloudkit;
 
 public class CloudKit {
     private CloudKit instance;

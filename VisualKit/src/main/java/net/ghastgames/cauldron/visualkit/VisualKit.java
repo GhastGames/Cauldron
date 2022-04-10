@@ -1,6 +1,5 @@
 package net.ghastgames.cauldron.visualkit;
 
-import lombok.Getter;
 import net.ghastgames.cauldron.visualkit.scoreboards.ScoreboardManager;
 import net.ghastgames.cauldron.visualkit.titles.TitleManager;
 

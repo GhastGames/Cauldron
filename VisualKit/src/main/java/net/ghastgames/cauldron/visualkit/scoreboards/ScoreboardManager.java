@@ -6,10 +6,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Objects;
-import java.util.UUID;
 
 public class ScoreboardManager implements VisualManager<CauldronScoreboard, ScoreboardValue> {
     private HashMap<Player, CauldronScoreboard> scoreboards = new HashMap<>();
