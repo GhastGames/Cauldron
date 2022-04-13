@@ -3,7 +3,7 @@
 </p>
 
 # Cauldron
-Libraries for Minecraft servers and their plugins. The documentation isn't ready yet, sorry! Cauldron is still under development.
+Libraries for Minecraft servers and their plugins. The documentation is available at https://cauldron.ghastgames.net! Cauldron is still under development.
 
 ## Features
 Cauldron simplifies your Minecraft development workflow. There are a few different modules you can use. 
