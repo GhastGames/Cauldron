@@ -1,6 +1,7 @@
 package net.ghastgames.cauldron.cloudkit;
 
 import com.google.gson.Gson;
+import net.ghastgames.cauldron.cloudkit.exceptions.ConfigurationException;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -12,7 +13,7 @@ public class Remote {
 
     private static final Gson gson = new Gson();
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ConfigurationException {
         String relativeConfigPath = "./cloudkit.remote.config.json";
 
         if(!Paths.get(relativeConfigPath).toFile().exists()) {
@@ -21,7 +22,14 @@ public class Remote {
             writer.write(gson.toJson(defaultConfig));
             writer.close();
         }
-        String config = new String(Files.readAllBytes(Paths.get(relativeConfigPath)));
 
+        String configText = new String(Files.readAllBytes(Paths.get(relativeConfigPath)));
+        CKRemoteConfig config;
+
+        try {
+            config = gson.fromJson(configText, CKRemoteConfig.class);
+        } catch (Exception exception) {
+            throw new ConfigurationException("Config missing");
+        }
     }
 }
