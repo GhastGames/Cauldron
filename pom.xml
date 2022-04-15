@@ -13,7 +13,6 @@
         <module>visualkit</module>
         <module>storagekit</module>
         <module>cloudkit</module>
-        <module>cloudkit-remote</module>
     </modules>
 
     <properties>
