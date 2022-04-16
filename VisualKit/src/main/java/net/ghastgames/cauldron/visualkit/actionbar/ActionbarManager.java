@@ -12,7 +12,7 @@ public class ActionbarManager implements VisualManager<Actionbar, Actionbar> {
 
     @Override
     public void update(Player player, Actionbar newObject) {
-
+        set(player, newObject);
     }
 
     @Override
