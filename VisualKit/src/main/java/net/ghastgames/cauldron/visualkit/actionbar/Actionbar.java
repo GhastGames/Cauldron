@@ -5,5 +5,4 @@ import lombok.Data;
 @Data
 public class Actionbar {
     String text;
-    int duration;
 }
