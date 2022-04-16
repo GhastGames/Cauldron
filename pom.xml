@@ -12,7 +12,6 @@
         <module>pluginkit</module>
         <module>visualkit</module>
         <module>storagekit</module>
-        <module>cloudkit</module>
     </modules>
 
     <properties>
