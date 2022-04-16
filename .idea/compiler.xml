@@ -8,12 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="StorageKit" />
-        <module name="CloudKit" />
         <module name="PluginKit" />
         <module name="VisualKit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CloudKit" target="8" />
       <module name="cloudkit-remote" target="8" />
       <module name="plugins" target="11" />
     </bytecodeTargetLevel>
