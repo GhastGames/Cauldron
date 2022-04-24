@@ -21,8 +21,6 @@ public class UIItem {
     int amount;
     boolean showEnchantments;
 
-    public UIItem() {}
-
     ItemStack getItemStack() {
         ItemStack itemStack = new ItemStack(material, amount);
         ItemMeta meta = itemStack.getItemMeta();
