@@ -16,3 +16,6 @@ Cauldron simplifies your Minecraft development workflow. There are a few differe
 
 **🗃 StorageKit**
 <br>Save values locally in your plugin's configuration file.
+
+**📺 UIKit (under development)**
+<br>Display user interfaces (inventories) to players.
