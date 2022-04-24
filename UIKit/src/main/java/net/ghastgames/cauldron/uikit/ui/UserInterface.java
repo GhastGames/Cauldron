@@ -2,6 +2,7 @@ package net.ghastgames.cauldron.uikit.ui;
 
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
 
@@ -18,6 +19,15 @@ public class UserInterface {
         this.slots = rows * 9; // rows * columns
 
         inventory = Bukkit.createInventory(new UIKitInventoryHolder(UUID.randomUUID()), this.slots, title);
+    }
 
+    /**
+     * Fills the inventory UI with the given item
+     * @param item The item
+     */
+    public void fill(ItemStack item) {
+        for (int i = 0; i < slots; i++) {
+            inventory.setItem(i, item);
+        }
     }
 }
