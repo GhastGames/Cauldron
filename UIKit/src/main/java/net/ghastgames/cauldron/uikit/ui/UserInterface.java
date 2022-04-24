@@ -1,5 +1,6 @@
 package net.ghastgames.cauldron.uikit.ui;
 
+import lombok.Getter;
 import net.ghastgames.cauldron.uikit.ui.button.UIButton;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -13,6 +14,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.HashMap;
 import java.util.UUID;
 
+@Getter
 public class UserInterface {
     String title;
     int slots;
