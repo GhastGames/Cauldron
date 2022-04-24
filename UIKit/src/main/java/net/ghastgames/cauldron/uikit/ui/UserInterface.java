@@ -30,4 +30,10 @@ public class UserInterface {
             inventory.setItem(i, item);
         }
     }
+
+    public void setItem(int index, UIItem item) {
+        inventory.setItem(index, item.getItemStack());
+    }
+
+
 }
