@@ -1,6 +1,7 @@
 package net.ghastgames.cauldron.uikit;
 
 import net.ghastgames.cauldron.uikit.ui.UserInterface;
+import org.bukkit.entity.Player;
 
 public class UIKit {
     private static UIKit instance;
@@ -10,7 +11,7 @@ public class UIKit {
         return instance;
     }
 
-    public void showUI(UserInterface userInterface) {
-
+    public void showUI(Player player, UserInterface userInterface) {
+        player.openInventory(userInterface.getInventory());
     }
 }
