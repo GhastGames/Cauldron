@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 
 @Data
 public class UIButton {
-    interface ClickAction {
+    public interface ClickAction {
         void onClick(Player player);
     }
     UIItem item;
