@@ -38,6 +38,7 @@ public class UserInterface {
             public void onEvent(InventoryClickEvent event) {
                 if(event.getClickedInventory().getHolder() instanceof UIKitInventoryHolder) {
                     if(((UIKitInventoryHolder) event.getClickedInventory().getHolder()).getInventoryID().equals(uuid)) {
+                        event.setCancelled(true);
                         int slot = event.getSlot();
                         UIButton.ClickAction action = clickActions.get(slot);
                         if(action != null) {
