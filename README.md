@@ -2,6 +2,7 @@
 <img src="https://github.com/GhastGames/Cauldron/blob/55e1277692e0ae725b6f7590c51f1024948313e5/banner.png?raw=true" width="600"/>
 </p>
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7f296384f0b140f2833e922927566332)](https://www.codacy.com/gh/GhastGames/Cauldron/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GhastGames/Cauldron&amp;utm_campaign=Badge_Grade)
 # Cauldron
 Libraries for Minecraft servers and their plugins. The documentation is available at https://cauldron.ghastgames.net! Cauldron is still under development.
 
